@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Step.Tour — тур-агент</title>
-  <link rel="icon" href="img/05-horizon.svg" type="image/svg+xml">
-  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" href="favicons/05-horizon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Prata&display=swap');
 
@@ -3012,6 +3012,50 @@
       }
     }
 
+    /* Trip dates */
+    .trip-dates {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 0;
+      border: 0
+    }
+
+    .trip-dates legend {
+      margin: 0 0 13px;
+      font: normal 22px 'Prata', Georgia, serif;
+      letter-spacing: -.025em
+    }
+
+    .trip-date-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .trip-date-fields label {
+      display: grid;
+      gap: 7px;
+      color: #5d615b;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .trip-date-fields input {
+      margin: 0 !important
+    }
+
+    @media(max-width:560px) {
+      .trip-date-fields {
+        grid-template-columns: 1fr;
+        gap: 15px
+      }
+
+      .trip-dates legend {
+        font-size: 20px
+      }
+    }
+
     /* Consent and temporary anti-spam slot */
     .honeypot {
       position: absolute !important;
@@ -3079,6 +3123,301 @@
         font-size: 10px
       }
     }
+
+    @media(min-width:761px) and (max-width:1100px) {
+      .paper h2 {
+        font-size: clamp(25px, 3.3vw, 34px) !important;
+        line-height: 1.12 !important;
+        white-space: nowrap;
+        letter-spacing: .005em !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:1366px) and (orientation:landscape) {
+      .paper h2 {
+        font-size: 30px !important;
+        line-height: 1.12 !important;
+        letter-spacing: .01em !important;
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important
+      }
+    }
+
+    /* iPad: cards use their own full row instead of overflowing a narrow column */
+    @media(min-width:761px) and (max-width:1366px) {
+      .paper {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        align-items: start
+      }
+
+      .paper h2 {
+        grid-column: 1 !important;
+        grid-row: 1 !important
+      }
+
+      .paper .intro {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end;
+        align-self: start;
+        margin: 6px 0 0 !important;
+        max-width: 300px
+      }
+
+      .paper .polaroids {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        justify-content: center;
+        gap: 16px !important;
+        margin-top: 4px
+      }
+
+      .paper .pol {
+        width: clamp(150px, 18vw, 190px) !important
+      }
+
+      .paper .pol-photo {
+        height: clamp(145px, 17vw, 180px) !important
+      }
+    }
+
+    /* Footstep route: longer than the card gaps and deliberately crossing their edges */
+    .steps:before {
+      display: none !important
+    }
+
+    .steps-footpath {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .72;
+      clip-path: inset(0 100% 0 0)
+    }
+
+    .steps-footpath-desktop ellipse {
+      rx: 2.5px;
+      ry: 5px
+    }
+
+    .steps-footpath-mobile ellipse {
+      rx: 5px;
+      ry: 2.5px
+    }
+
+    .steps-footpath-desktop {
+      display: block;
+      top: -34px;
+      left: 0;
+      width: 100%;
+      height: 280px
+    }
+
+    .steps-footpath-mobile {
+      display: none
+    }
+
+    .how.thread-visible .steps-footpath-desktop {
+      animation: footpathReveal 9s cubic-bezier(.22, .61, .36, 1) forwards
+    }
+
+    @keyframes footpathReveal {
+      from {
+        clip-path: inset(0 100% 0 0)
+      }
+
+      to {
+        clip-path: inset(0 0 0 0)
+      }
+    }
+
+    @media(max-width:760px) {
+      .steps-footpath-desktop {
+        display: none
+      }
+
+      .steps-footpath-mobile {
+        display: block;
+        top: -31px;
+        left: calc(100% - 48px);
+        width: 42px;
+        height: calc(100% + 62px);
+        clip-path: inset(0 0 100% 0)
+      }
+
+      .how.thread-visible .steps-footpath-mobile {
+        animation: footpathRevealMobile 9s cubic-bezier(.22, .61, .36, 1) forwards
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .steps-footpath {
+        animation: none !important;
+        clip-path: none !important
+      }
+    }
+
+    .how>h2 {
+      position: relative;
+      top: -18px
+    }
+
+    @media(max-width:760px) {
+      .how>h2 {
+        top: -10px
+      }
+    }
+
+    /* Dotted route between process cards — follows the three arcs in the layout */
+    .steps-footpath {
+      display: none !important
+    }
+
+    .steps-route-lines {
+      position: absolute;
+      z-index: 0;
+      left: 2%;
+      top: -78px;
+      width: 96%;
+      height: 350px;
+      pointer-events: none;
+      overflow: visible
+    }
+
+    .route-line {
+      fill: none;
+      stroke: #403e38;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-dasharray: 2 8;
+      stroke-dashoffset: 0;
+      opacity: .85;
+      clip-path: inset(0 100% 0 0)
+    }
+
+    .how.thread-visible .route-line {
+      animation: dottedDraw 3s cubic-bezier(.22, .61, .36, 1) forwards
+    }
+
+    .how.thread-visible .route-line-a {
+      animation-delay: 0s
+    }
+
+    .how.thread-visible .route-line-b {
+      animation-delay: 3s
+    }
+
+    .how.thread-visible .route-line-c {
+      animation-delay: 6s
+    }
+
+    @keyframes dottedDraw {
+      from {
+        clip-path: inset(0 100% 0 0)
+      }
+
+      to {
+        clip-path: inset(0 0 0 0)
+      }
+    }
+
+    @media(max-width:760px) {
+      .steps-route-lines {
+        display: none
+      }
+
+      .steps:before {
+        display: block !important;
+        z-index: 0;
+        left: 21px !important;
+        right: auto !important;
+        top: 0 !important;
+        width: 0 !important;
+        height: 100% !important;
+        background: none !important;
+        border-left: 2px dashed #403e38;
+        opacity: .75;
+        clip-path: inset(0 0 100% 0) !important
+      }
+
+      .how.thread-visible .steps:before {
+        animation: mobileDottedRoute 9s linear forwards !important
+      }
+    }
+
+    @keyframes mobileDottedRoute {
+      from {
+        clip-path: inset(0 0 100% 0)
+      }
+
+      to {
+        clip-path: inset(0 0 0 0)
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .steps-route-lines,
+      .steps:before {
+        animation: none !important;
+        opacity: .75 !important;
+        clip-path: none !important
+      }
+
+      .route-line {
+        opacity: .85;
+        stroke-dashoffset: 0;
+        clip-path: none
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 76px;
+      padding: 18px;
+      background: #2d4a40
+    }
+
+    .site-footer a {
+      position: relative;
+      color: #f7f2e8;
+      text-decoration: none;
+      font: normal 18px 'Prata', Georgia, serif;
+      letter-spacing: -.025em
+    }
+
+    .site-footer a:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 1px;
+      background: #d9ba6b;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .45s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .site-footer a:hover:after,
+    .site-footer a:focus-visible:after {
+      transform: scaleX(1);
+      transform-origin: left
+    }
+
+    @media(max-width:560px) {
+      .site-footer {
+        min-height: 96px
+      }
+
+      .site-footer a {
+        font-size: 23px
+      }
+    }
   </style>
 </head>
 
@@ -3128,7 +3467,12 @@
     </section>
     <section class="how" id="process">
       <h2>Шаг за шагом:<br>как мы работаем</h2>
-      <div class="steps">
+      <div class="steps"><svg class="steps-route-lines" viewBox="0 0 1000 360" preserveAspectRatio="none"
+          aria-hidden="true">
+          <path class="route-line route-line-a" d="M90 170 C130 25 235 25 278 158"></path>
+          <path class="route-line route-line-b" d="M390 225 C447 364 565 364 632 255"></path>
+          <path class="route-line route-line-c" d="M710 168 C765 58 860 50 925 143"></path>
+        </svg>
         <article class="step"><b>01</b>
           <h3>Знакомимся</h3>
           <p>Слушаем ваши планы, даты, бюджет и важные ограничения.</p>
@@ -3276,6 +3620,11 @@
                 aria-label="Удалить путешественника" hidden>×</button></div>
           </div><button class="add-traveller" type="button">+ Добавить путешественника</button>
         </fieldset>
+        <fieldset class="trip-dates">
+          <div class="trip-date-fields"><label><span>Начало поездки</span><input id="trip-start" name="trip_start"
+                type="date" required></label><label><span>Окончание поездки</span><input id="trip-end" name="trip_end"
+                type="date" required></label></div>
+        </fieldset>
         <div class="contact-inputs"><label class="sr-only" for="phone-value">Телефон</label><input id="phone-value"
             name="phone" type="tel" placeholder="Телефон" autocomplete="tel" required><label class="sr-only"
             for="telegram-value">Telegram</label><input id="telegram-value" name="telegram" type="text"
@@ -3292,6 +3641,8 @@
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
+    <footer class="site-footer"><a href="https://t.me/Step_tour_official" target="_blank" rel="noopener">Telegram</a>
+    </footer>
   </main>
   <script>
     document.documentElement.classList.add('js');
@@ -3300,8 +3651,8 @@
 
     /* Редактируемые списки городов для вступительной заставки. */
     const INTRO_START_CITIES = ['Берлин', 'Тбилиси', 'Лиссабон', 'Стамбул', 'Рейкьявик', 'Париж', 'Москва', 'Санкт-Петербург', 'Барселона'];
-    const INTRO_CYCLING_CITIES = ['Киото', 'Мадейра', 'Рим', 'Баку', 'Осло', 'Каппадокия', 'Барселона','Анкара', 'Пекин', 'Токио', "Абу-Даби", "Дубай"];
-    const INTRO_FINAL_CITIES = ['Мадейра', 'Киото', 'Рейкьявик', 'Рим', 'Баку', 'Осло', 'Анкара', 'Пекин', 'Токио', "Абу-Даби", "Дубай"];
+    const INTRO_CYCLING_CITIES = ['Киото', 'Мадейра', 'Рим', 'Баку', 'Осло', 'Каппадокия', 'Барселона'];
+    const INTRO_FINAL_CITIES = ['Мадейра', 'Киото', 'Тбилиси', 'Рейкьявик', 'Лиссабон', 'Рим', 'Баку', 'Осло', 'Анкара', 'Пекин', 'Токио'];
     const pickCity = list => list[Math.floor(Math.random() * list.length)];
     const startCity = document.querySelector('.intro-city-start');
     const endCity = document.querySelector('.intro-city-end');
@@ -3350,12 +3701,19 @@
     updateTravellerControls();
     const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz_Mq9PNpKQgD8CP3b_iVx5gTGNq9ZPGhf-sckN3HY8eQYqY95TCsS4QjXYPuA6aZPP/exec';
     form.addEventListener('submit', async event => {
-      event.preventDefault(); let valid = true; form.querySelectorAll('[required]').forEach(field => { const empty = field.type === 'checkbox' ? !field.checked : !field.value.trim(); const invalidPhone = field === phoneField && field.value.replace(/\D/g, '').length === 0; const invalid = empty || invalidPhone; field.setAttribute('aria-invalid', invalid ? 'true' : 'false'); valid = valid && !invalid; }); if (!valid) { status.textContent = 'Пожалуйста, заполните обязательные поля и подтвердите согласие на обработку данных.'; return; }
+      event.preventDefault(); let valid = true; form.querySelectorAll('[required]').forEach(field => { const empty = field.type === 'checkbox' ? !field.checked : !field.value.trim(); const invalidPhone = field === phoneField && field.value.replace(/\D/g, '').length === 0; const invalid = empty || invalidPhone; field.setAttribute('aria-invalid', invalid ? 'true' : 'false'); valid = valid && !invalid; });
+      const tripStart = form.elements.trip_start, tripEnd = form.elements.trip_end;
+      const invalidDates = tripStart.value && tripEnd.value && tripEnd.value < tripStart.value;
+      tripEnd.setAttribute('aria-invalid', invalidDates ? 'true' : 'false');
+      if (invalidDates) valid = false;
+      if (!valid) { status.textContent = invalidDates ? 'Дата окончания не может быть раньше даты начала поездки.' : 'Пожалуйста, заполните обязательные поля и подтвердите согласие на обработку данных.'; return; }
       /* Basic anti-bot honeypot. This remains active until Turnstile is connected. */
       if (form.elements.company_site.value.trim()) return;
       const button = form.querySelector('button[type="submit"]');
       const application = {
         travellers: [...travellerList.querySelectorAll('.traveller-row')].map(row => ({ name: row.querySelector('[name="traveller_name[]"]').value.trim(), age: row.querySelector('[name="traveller_age[]"]').value.trim() })),
+        tripStart: form.elements.trip_start.value,
+        tripEnd: form.elements.trip_end.value,
         phone: form.elements.phone.value.trim(),
         telegram: form.elements.telegram.value.trim(),
         message: form.elements.message.value.trim(),
@@ -3405,7 +3763,7 @@
       threadObserver.observe(processBlock);
     } else if (processBlock) { processBlock.classList.add('thread-visible'); }
   </script>
-  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a2a986374b9170db',t:'MTc4NjY0MzAyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a2b0630fdba82d96',t:'MTc4NjcxNDk5MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
