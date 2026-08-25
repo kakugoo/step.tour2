@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Step.Tour — тур-агент</title>
-  <link rel="icon" href="favicons/05-horizon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicons/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="shortcut icon" href="favicons/favicon.ico">
-  <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
+  <link rel="icon" href="assets/05-horizon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/hero-road.jpg" as="image" fetchpriority="high">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Prata&display=swap');
 
@@ -1185,7 +1186,7 @@
 
     /* Photography */
     .hero-background {
-      background: #253d41 url('https://images.pexels.com/photos/2790919/pexels-photo-2790919.jpeg?auto=compress&cs=tinysrgb&w=2400') center 54% / cover no-repeat !important
+      background: #253d41 url('assets/hero-road.jpg') center 54% / cover no-repeat !important
     }
 
     .hero-background:before {
@@ -2580,8 +2581,17 @@
     }
 
     .step p {
-      font-size: 12px !important;
-      line-height: 1.5 !important
+      color: #353833;
+      font: 400 clamp(14px, 1.1vw, 16px)/1.6 'PT Sans', Arial, sans-serif !important;
+      letter-spacing: .005em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (max-width: 760px) {
+      .step p {
+        font-size: 13px !important;
+        line-height: 1.58 !important;
+      }
     }
 
     /* Second block: make the promise the main visual accent */
@@ -2780,6 +2790,8 @@
     }
 
     .contact-form .tag {
+      position: relative;
+      top: -24px;
       margin-bottom: 19px
     }
 
@@ -2892,6 +2904,11 @@
     }
 
     @media(max-width:560px) {
+      .contact-form .tag {
+        position: relative;
+        top: -28px;
+      }
+
       .contact-form {
         row-gap: 30px !important
       }
@@ -2917,6 +2934,69 @@
 
       .form-fields {
         gap: 19px !important
+      }
+    }
+
+    /* More compact review quote text */
+    .review-slide q {
+      font-size: clamp(22px, 1.85vw, 30px) !important;
+      line-height: 1.2 !important;
+    }
+
+    @media (max-width: 560px) {
+      .review-slide q {
+        font-size: 21px !important;
+      }
+    }
+
+    /* Cases section intro */
+    .cases-intro {
+      margin: 40px 0 0;
+      color: #5b5d56;
+      font: 400 18px/1.55 'PT Sans', Arial, sans-serif;
+      max-width: 360px;
+    }
+
+    .cases-intro:before {
+      content: '';
+      display: block;
+      width: 74px;
+      height: 3px;
+      margin-bottom: 18px;
+      background: #b44f38;
+      transform: rotate(-1.2deg);
+    }
+
+    @media (min-width: 761px) {
+      .cases h2 {
+        grid-row: 1 !important;
+      }
+
+      .cases-intro {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
+        margin-top: 0;
+        transform: translateY(155px);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .cases h2 {
+        text-align: left !important;
+      }
+
+      .cases-intro {
+        margin: 30px 0 26px;
+        transform: none;
+        font-size: 15px;
+      }
+
+      .people h2,
+      .people>.intro {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
@@ -3418,6 +3498,181 @@
         font-size: 23px
       }
     }
+
+    /* Swap colours after reordering the two sections */
+    .areas {
+      background: #eee7da;
+    }
+
+    .how {
+      background: #f5f0e5;
+    }
+
+    /* Directions block spacing */
+    .areas>h2 {
+      position: relative;
+      top: -18px;
+    }
+
+    .area small {
+      margin-top: 20px !important;
+    }
+
+    @media (max-width: 760px) {
+      .areas>h2 {
+        top: -10px;
+        text-align: left !important;
+      }
+
+      .areas>.intro {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .area small {
+        margin-top: 16px !important;
+      }
+    }
+
+    /* Process card timing */
+    .step-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .step-duration {
+      color: #7b776d;
+      font: 700 9px 'PT Sans', Arial, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      .step-duration {
+        font-size: 8px;
+      }
+    }
+
+    /* First screen: left-aligned headline */
+    .hero-copy {
+      align-items: flex-start !important;
+      text-align: left !important;
+      padding-left: clamp(28px, 8vw, 150px) !important;
+      padding-right: 28px !important;
+    }
+
+    .hero .hero-slogan {
+      max-width: min(760px, 78vw) !important;
+    }
+
+    /* Brand colour split, matching the intro animation */
+    .site-brand span {
+      color: #b44f38;
+    }
+
+    .hero-stats {
+      position: absolute;
+      left: clamp(28px, 8vw, 150px);
+      bottom: clamp(52px, 8vh, 110px);
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      column-gap: 24px;
+      align-items: flex-start;
+      margin: 0;
+      color: #fffdf7;
+    }
+
+    .hero-stats span {
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    .hero-stats b {
+      color: #fffdf7;
+      font: normal 29px/.9 'Prata', Georgia, serif;
+      letter-spacing: -.04em;
+    }
+
+    .hero-stats small {
+      color: #fffdf7;
+      font: 700 10px/1.25 'PT Sans', Arial, sans-serif;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+
+    .mobile-hero-break {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero-copy {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+
+      .hero .hero-slogan {
+        max-width: 100% !important;
+        font-size: clamp(31px, 9.5vw, 45px) !important;
+        line-height: 1.03 !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      .mobile-hero-break {
+        display: block;
+      }
+
+      .paper h2 {
+        text-align: left !important;
+        line-height: 1.05 !important;
+      }
+
+      .hero-stats {
+        left: clamp(52px, 9vw, 72px);
+        bottom: clamp(190px, 27vh, 420px);
+        width: calc(100% - clamp(76px, 13vw, 96px));
+        max-width: 340px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 12px;
+        margin: 0;
+      }
+
+      .hero-stats b {
+        font-size: 23px;
+      }
+
+      .hero-stats small {
+        font-size: 8px;
+        letter-spacing: .06em;
+      }
+
+      /* Mobile CTA stays between the brand and menu */
+      .header-cta {
+        display: inline-flex !important;
+        align-items: center;
+        padding: 8px 9px;
+        font-size: 8px;
+        letter-spacing: .075em;
+        white-space: nowrap;
+      }
+
+      .header-cta.is-active {
+        background: #263d35 !important;
+        color: #f7f1e6 !important;
+        border-color: #263d35 !important;
+      }
+
+      .header-cta:hover {
+        background: transparent;
+        color: inherit;
+      }
+    }
   </style>
 </head>
 
@@ -3432,20 +3687,25 @@
   </div>
   <main class="page">
     <section class="hero" id="top">
-      <header class="site-header"><a class="site-brand" href="#top">Step.Tour</a>
-        <nav class="site-nav" aria-label="Основная навигация"><a href="#about">О нас</a><a href="#process">Как
-            работаем</a><a href="#directions">Направления</a><a href="#team">Команда</a><a href="#reviews">Отзывы</a>
+      <header class="site-header"><a class="site-brand" href="#top">Step.<span>Tour</span></a>
+        <nav class="site-nav" aria-label="Основная навигация"><a href="#about">О нас</a><a
+            href="#directions">Направления</a><a href="#process">Как
+            работаем</a><a href="#team">Команда</a><a href="#reviews">Отзывы</a>
         </nav><a class="header-cta" href="#contact">Оставить заявку</a>
         <details class="mobile-menu">
           <summary aria-label="Открыть меню">Меню</summary>
-          <nav><a href="#about">О нас</a><a href="#process">Как работаем</a><a href="#directions">Направления</a><a
+          <nav><a href="#about">О нас</a><a href="#directions">Направления</a><a href="#process">Как работаем</a><a
               href="#team">Команда</a><a href="#reviews">Отзывы</a></nav>
         </details>
       </header>
       <div class="in">
         <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-copy">
-          <h1 class="hero-slogan">Каждое путешествие начинается <em>с внимательного разговора.</em></h1>
+          <h1 class="hero-slogan">Каждое путешествие<br class="mobile-hero-break"> начинается<br
+              class="mobile-hero-break"> <em>с внимательного<br class="mobile-hero-break"> разговора.</em></h1>
+          <div class="hero-stats" aria-label="Ключевые показатели Step.Tour">
+            <span><b>5.0</b><small>оценка</small></span><span><b>2014</b><small>дата
+                основания</small></span><span><b>50+</b><small>стран в ассортименте</small></span></div>
         </div>
       </div>
     </section>
@@ -3454,15 +3714,26 @@
       <p class="intro">Step.Tour — тур-агент с человеческим подходом. Изучаем детали, честно сравниваем варианты и
         сопровождаем до возвращения.</p>
       <div class="polaroids">
-        <div class="pol"><img class="pol-photo"
-            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85"
+        <div class="pol"><img loading="lazy" decoding="async" class="pol-photo" src="assets/city.jpg"
             alt="Улицы европейского города"><small>В городах</small></div>
-        <div class="pol"><img class="pol-photo"
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+        <div class="pol"><img loading="lazy" decoding="async" class="pol-photo" src="assets/ocean.jpg"
             alt="Берег океана"><small>У океана</small></div>
-        <div class="pol"><img class="pol-photo"
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
+        <div class="pol"><img loading="lazy" decoding="async" class="pol-photo" src="assets/mountains.jpg"
             alt="Горный пейзаж"><small>В горах</small></div>
+      </div>
+    </section>
+    <section class="areas" id="directions">
+      <h2>Направления</h2>
+      <p class="intro">Море, горы, города, семейные и авторские путешествия.</p>
+      <div class="area-grid">
+        <article class="area"><img loading="lazy" decoding="async" class="area-photo" src="assets/ocean.jpg"
+            alt="Побережье Средиземноморья"><b>Средиземноморье</b><small>море и острова</small></article>
+        <article class="area"><img loading="lazy" decoding="async" class="area-photo" src="assets/mountains.jpg"
+            alt="Горный пейзаж"><b>Кавказ и Алтай</b><small>горы и тропы</small></article>
+        <article class="area"><img loading="lazy" decoding="async" class="area-photo" src="assets/kyoto.jpg"
+            alt="Улица Киото"><b>Азия</b><small>культура и вкус</small></article>
+        <article class="area"><img loading="lazy" decoding="async" class="area-photo" src="assets/nature.jpg"
+            alt="Природа Северной Европы"><b>Северная Европа</b><small>природа и города</small></article>
       </div>
     </section>
     <section class="how" id="process">
@@ -3473,40 +3744,26 @@
           <path class="route-line route-line-b" d="M390 225 C447 364 565 364 632 255"></path>
           <path class="route-line route-line-c" d="M710 168 C765 58 860 50 925 143"></path>
         </svg>
-        <article class="step"><b>01</b>
+        <article class="step">
+          <div class="step-head"><b>01</b><span class="step-duration">1 день</span></div>
           <h3>Знакомимся</h3>
           <p>Слушаем ваши планы, даты, бюджет и важные ограничения.</p>
         </article>
-        <article class="step"><b>02</b>
+        <article class="step">
+          <div class="step-head"><b>02</b><span class="step-duration">2–3 день</span></div>
           <h3>Подбираем</h3>
           <p>Готовим 2–4 варианта от проверенных туроператоров.</p>
         </article>
-        <article class="step"><b>03</b>
+        <article class="step">
+          <div class="step-head"><b>03</b><span class="step-duration">4–5 день</span></div>
           <h3>Объясняем</h3>
           <p>Рассказываем о плюсах, нюансах и сезоне без мелкого шрифта.</p>
         </article>
-        <article class="step"><b>04</b>
+        <article class="step">
+          <div class="step-head"><b>04</b><span class="step-duration">6–7 день</span></div>
           <h3>Оформляем</h3>
           <p>Бронируем, готовим документы, остаёмся рядом.</p>
         </article>
-      </div>
-    </section>
-    <section class="areas" id="directions">
-      <h2>Направления</h2>
-      <p class="intro">Море, горы, города, семейные и авторские путешествия.</p>
-      <div class="area-grid">
-        <article class="area"><img class="area-photo"
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
-            alt="Побережье Средиземноморья"><b>Средиземноморье</b><small>море и острова</small></article>
-        <article class="area"><img class="area-photo"
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
-            alt="Горный пейзаж"><b>Кавказ и Алтай</b><small>горы и тропы</small></article>
-        <article class="area"><img class="area-photo"
-            src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
-            alt="Улица Киото"><b>Азия</b><small>культура и вкус</small></article>
-        <article class="area"><img class="area-photo"
-            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-            alt="Природа Северной Европы"><b>Северная Европа</b><small>природа и города</small></article>
       </div>
     </section>
     <section class="people" id="team">
@@ -3526,24 +3783,47 @@
     </section>
     <section class="cases">
       <h2>Наши кейсы</h2>
+      <p class="cases-intro">Мы решаем ваши проблемы, не оставляя их вам</p>
       <details class="case">
         <summary><b>01</b>
-          <h3>Мадейра для двоих</h3><span class="case-arrow" aria-hidden="true">+</span>
+          <h3>Египет</h3><span class="case-arrow" aria-hidden="true">+</span>
         </summary>
         <div class="case-details">
-          <p>Океан, природа и минимум переездов: нашли маленький отель, удобные рейсы и автомобиль.</p>
-          <p>Добавили маршруты по левадам, день без планов у океана и рекомендации семейных ресторанов рядом с отелем.
-          </p>
+          <p>Если вы <strong>прилетаете в Шарм-эль-Шейх, то по прилете вам ставят Синайский штамп.</strong> С ним можно
+            отдыхать на Синайском полуострове, но <strong>поехать в Каир к пирамидам уже нельзя. Если хотите увидеть это
+              чудо света, необходимо оформить полноценную египетскую визу</strong></p>
+          <p>Наши туристы об этом знали, поэтому сразу по прилете купили визу. Но есть один очень важный момент.</p>
+          <p>После покупки <strong>вам вклеивают (или вы сами вклеиваете) визовую марку</strong> в паспорт, и на нее
+            <strong>обязательно должны поставить штамп.</strong> Только тогда виза имеет юридическую силу.</p>
+          <p>К сожалению, наши туристы забрали только марку и были уверены, что это и есть готовая виза. Позже они
+            купили у своего гида экскурсию к пирамидам. Самое обидное, что гид тоже не проверил документы и спокойно
+            продал экскурсию.</p>
+          <p>В итоге в час ночи их не посадили в автобус.</p>
+          <p>Поэтому делимся с вами этой историей из личного опыта. <strong>Если покупаете египетскую визу обязательно
+              проверьте, чтобы на визовой марке стоял штамп.</strong></p>
+          <p>Рассказываем, чем все закончилось. Деньги за экскурсию им вернули, но пирамиды они, к сожалению, так и не
+            увидели.</p>
         </div>
       </details>
       <details class="case">
         <summary><b>02</b>
-          <h3>Первый отпуск с ребёнком</h3><span class="case-arrow" aria-hidden="true">+</span>
+          <h3>Таиланд с пересадкой в Дубае</h3><span class="case-arrow" aria-hidden="true">+</span>
         </summary>
         <div class="case-details">
-          <p>Сравнили курорты и выбрали спокойный Крит с коротким трансфером.</p>
-          <p>Проверили питание, пляж, формат номера и время вылетов, чтобы путешествие было комфортным для всей семьи.
-          </p>
+          <p>Наши туристы <strong>летели в Таиланд с пересадкой в Дубае</strong> авиакомпанией Emirates. И буквально за
+            пару дней до вылета <strong>закрывают воздушное пространство.</strong> Этот момент неопределенности. Откроют
+            ли его? Спойлер, его не открыли.</p>
+          <p>Как только появилась официальная информация о возвратах, <strong>мы сразу подали заявление и запросили
+              возврат средств</strong>, параллельно перенесли трансфер на новые рейсы (новые авиабилеты туристы покупали
+            уже отдельно).</p>
+          <p><strong>А дальше ожидание. День, два, неделя…</strong> Наши туристы уже успели слетать и вернуться из
+            отпуска, а деньги так и не приходят. Сроки подходят к концу, и в какой-то момент <strong>приходит сообщение:
+              «руководство приостановило выплаты по возвратам».</strong> Мы были и обескуражены, и возмущены
+            одновременно.</p>
+          <p>Быстро собираемся, <strong>готовим досудебную претензию, параллельно готовимся выходить в суд</strong>. Все
+            это время на связи с туристами, потому что понимаем, насколько это неприятная и нервная ситуация.</p>
+          <p>И вот, <strong>спустя месяц</strong> и одной досудебной претензии… <strong>денежные средства дошли до наших
+              туристов.</strong></p>
         </div>
       </details>
       <details class="case">
@@ -3582,7 +3862,7 @@
     </section>
     <section class="guide" id="guide">
       <h2>Как описать<br>свои пожелания</h2>
-      <p>Не обязательно знать страну. Вот что поможет агенту точно вас понять.</p>
+      <p>Необязательно знать страну. Вот что поможет агенту точно вас понять.</p>
       <article class="gstep"><b>01</b>
         <div>
           <h3>Скажите о настроении</h3>
@@ -3625,9 +3905,13 @@
                 type="date" required></label><label><span>Окончание поездки</span><input id="trip-end" name="trip_end"
                 type="date" required></label></div>
         </fieldset>
-        <div class="contact-inputs"><label class="sr-only" for="phone-value">Телефон</label><input id="phone-value"
-            name="phone" type="tel" placeholder="Телефон" autocomplete="tel" required><label class="sr-only"
-            for="telegram-value">Telegram</label><input id="telegram-value" name="telegram" type="text"
+        <div class="contact-inputs"><label class="sr-only" for="budget-value">Бюджет</label><input id="budget-value"
+            name="budget" type="text" placeholder="Бюджет" autocomplete="off" required><label class="sr-only"
+            for="phone-value">Телефон</label><input id="phone-value" name="phone" type="tel" placeholder="Телефон"
+            autocomplete="tel" required></div>
+        <div class="contact-inputs optional-contacts"><label class="sr-only" for="max-value">Max</label><input
+            id="max-value" name="max" type="text" placeholder="Max (необязательно)" autocomplete="off"><label
+            class="sr-only" for="telegram-value">Telegram</label><input id="telegram-value" name="telegram" type="text"
             placeholder="Telegram (необязательно)" autocomplete="off"></div>
         <label class="sr-only" for="message">Пожелания к поездке</label><textarea id="message" name="message"
           placeholder="Куда и когда хотите поехать? Что для вас важно?" required></textarea>
@@ -3683,6 +3967,19 @@
     const hero = document.querySelector('.hero'), background = document.querySelector('.hero-background'), header = document.querySelector('.site-header');
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.querySelectorAll('.site-header a[href^="#"]').forEach(link => link.addEventListener('click', event => { const target = document.querySelector(link.getAttribute('href')); if (!target) return; event.preventDefault(); target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); history.replaceState(null, '', link.getAttribute('href')); }));
+    const mobileHeaderCta = document.querySelector('.header-cta');
+    const contactBlockForCta = document.querySelector('#contact');
+    if (mobileHeaderCta && contactBlockForCta) {
+      let contactWasReached = false;
+      const clearHeaderCta = () => { mobileHeaderCta.classList.remove('is-active'); mobileHeaderCta.blur(); };
+      mobileHeaderCta.addEventListener('click', () => { contactWasReached = false; mobileHeaderCta.classList.add('is-active'); });
+      const ctaObserver = new IntersectionObserver(entries => {
+        const contactIsVisible = entries[0].isIntersecting;
+        if (contactIsVisible) contactWasReached = true;
+        else if (contactWasReached) clearHeaderCta();
+      }, { threshold: .12 });
+      ctaObserver.observe(contactBlockForCta);
+    }
     let ticking = false;
     function moveBackground() { if (!reduceMotion) { const top = hero.getBoundingClientRect().top; const shift = Math.max(-58, Math.min(58, -top * .14)); background.style.transform = `translateY(${shift}px) scale(1.05)`; } header.classList.toggle('is-scrolled', scrollY > 360); ticking = false; }
     addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(moveBackground); ticking = true } }, { passive: true }); moveBackground();
@@ -3695,6 +3992,20 @@
     phoneField.addEventListener('beforeinput', event => { if (event.data && /[^\d+]/.test(event.data)) event.preventDefault(); });
     phoneField.addEventListener('keydown', event => { const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'Tab']; if (event.ctrlKey || event.metaKey || allowedKeys.includes(event.key)) return; if (event.key.length === 1 && !/[\d+]/.test(event.key)) event.preventDefault(); });
     phoneField.addEventListener('input', sanitizePhone);
+
+    // Keep the two trip dates logically linked in the native date pickers.
+    const tripStartField = form.elements.trip_start;
+    const tripEndField = form.elements.trip_end;
+    const syncTripDates = () => {
+      tripEndField.min = tripStartField.value || '';
+      if (tripStartField.value && tripEndField.value && tripEndField.value < tripStartField.value) {
+        tripEndField.value = '';
+      }
+      tripStartField.max = tripEndField.value || '';
+    };
+    tripStartField.addEventListener('change', syncTripDates);
+    tripEndField.addEventListener('change', syncTripDates);
+
     const updateTravellerControls = () => { const rows = [...travellerList.querySelectorAll('.traveller-row')]; rows.forEach((row, index) => { const remove = row.querySelector('.remove-traveller'); remove.hidden = rows.length === 1; remove.setAttribute('aria-label', `Удалить путешественника ${index + 1}`); }); };
     addTraveller.addEventListener('click', () => { const row = document.createElement('div'); row.className = 'traveller-row'; row.innerHTML = '<label class="sr-only">Имя путешественника</label><input name="traveller_name[]" type="text" placeholder="Имя" autocomplete="name" required><label class="sr-only">Возраст путешественника</label><input name="traveller_age[]" type="number" min="0" max="120" inputmode="numeric" placeholder="Возраст" required><button class="remove-traveller" type="button" aria-label="Удалить путешественника">×</button>'; travellerList.append(row); updateTravellerControls(); row.querySelector('input').focus(); });
     travellerList.addEventListener('click', event => { const button = event.target.closest('.remove-traveller'); if (!button || travellerList.querySelectorAll('.traveller-row').length <= 1) return; button.closest('.traveller-row').remove(); updateTravellerControls(); });
@@ -3714,7 +4025,9 @@
         travellers: [...travellerList.querySelectorAll('.traveller-row')].map(row => ({ name: row.querySelector('[name="traveller_name[]"]').value.trim(), age: row.querySelector('[name="traveller_age[]"]').value.trim() })),
         tripStart: form.elements.trip_start.value,
         tripEnd: form.elements.trip_end.value,
+        budget: form.elements.budget.value.trim(),
         phone: form.elements.phone.value.trim(),
+        max: form.elements.max.value.trim(),
         telegram: form.elements.telegram.value.trim(),
         message: form.elements.message.value.trim(),
         privacyConsent: form.elements.privacy_consent.checked
@@ -3762,8 +4075,18 @@
       const threadObserver = new IntersectionObserver(entries => { processBlock.classList.toggle('thread-visible', entries[0].isIntersecting); }, { threshold: .08 });
       threadObserver.observe(processBlock);
     } else if (processBlock) { processBlock.classList.add('thread-visible'); }
+
+    /* Mobile menu closes on an outside tap, navigation tap, or page scroll. */
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+      document.addEventListener('click', event => {
+        if (mobileMenu.open && !mobileMenu.contains(event.target)) mobileMenu.open = false;
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileMenu.open = false; }));
+      addEventListener('scroll', () => { if (mobileMenu.open) mobileMenu.open = false; }, { passive: true });
+    }
   </script>
-  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a2b0630fdba82d96',t:'MTc4NjcxNDk5MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a30d1f6208aff476',t:'MTc4NzY4NzM5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
