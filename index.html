@@ -5,21 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Step.Tour — тур-агент</title>
-  <meta name="description"
-    content="Step.Tour — тур-агент с человеческим подходом: не продаём «горячие» туры, а слушаем, советуем и помогаем оформить путешествие под вас. Оставьте заявку — предложим варианты.">
-  <!-- Для соцсетей при публикации замените assets/hero-road.jpg на полный адрес: https://ваш-домен/assets/hero-road.jpg -->
+  <meta name="description" content="Step.Tour — тур-агент с человеческим подходом: не продаём «горячие» туры, а слушаем, советуем и помогаем оформить путешествие под вас. Оставьте заявку — предложим варианты.">
+  <!-- Для соцсетей при публикации замените assets/hero-bg.jpg на полный адрес: https://ваш-домен/assets/hero-bg.jpg -->
   <meta property="og:title" content="Step.Tour — тур-агент">
-  <meta property="og:description"
-    content="Не продаём «горячие» туры — слушаем, советуем и подбираем путешествие под вас.">
+  <meta property="og:description" content="Не продаём «горячие» туры — слушаем, советуем и подбираем путешествие под вас.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/hero-road.jpg">
+  <meta property="og:image" content="assets/hero-bg.jpg">
   <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="shortcut icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preload" href="assets/hero-road.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/hero-bg.jpg" as="image" fetchpriority="high">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Prata&display=swap');
 
     * {
       box-sizing: border-box
@@ -925,33 +923,10 @@
     .hero-background {
       position: absolute;
       z-index: 0;
-      inset: -72px 0;
-      background: #6e877d;
+      inset: -180px 0;
+      background: #253d41;
       will-change: transform;
       transform: scale(1.05)
-    }
-
-    .hero-background:before {
-      content: '';
-      position: absolute;
-      width: 315px;
-      height: 315px;
-      right: 16%;
-      top: 80px;
-      border-radius: 50%;
-      background: #d7bd78
-    }
-
-    .hero-background:after {
-      content: '';
-      position: absolute;
-      bottom: -80px;
-      left: -9%;
-      width: 118%;
-      height: 60%;
-      background: #31574c;
-      border-radius: 48% 52% 0 0;
-      box-shadow: 310px -110px 0 -18px #426d5f, 650px -68px 0 -32px #29493f
     }
 
     .hero .in {
@@ -965,20 +940,6 @@
 
     .hero:after {
       z-index: 1
-    }
-
-    @media(max-width:560px) {
-      .hero-background:before {
-        width: 190px;
-        height: 190px;
-        top: 125px;
-        right: -15px
-      }
-
-      .hero-background:after {
-        height: 48%;
-        bottom: -36px
-      }
     }
 
     /* Full-screen opening image with Step.Tour brand message */
@@ -1058,7 +1019,6 @@
       font-size: clamp(18px, 1.55vw, 25px) !important;
       margin-bottom: 31px !important
     }
-
     .hero .nav {
       display: none !important
     }
@@ -1080,19 +1040,11 @@
     }
 
     /* Photography */
+    /* ФОТО + ЗАТЕМНЕНИЕ — единственное место настройки.
+       rgba(23, 43, 40, .68) — затемнение: .68 = плотность (0 — нет, 1 — полностью тёмный);
+       center 44% — положение кадра по вертикали (0% — верх фото, 100% — низ). */
     .hero-background {
-      background: #253d41 url('assets/hero-road.jpg') center 54% / cover no-repeat !important
-    }
-
-    .hero-background:before {
-      content: '' !important;
-      inset: 0 !important;
-      width: auto !important;
-      height: auto !important;
-      right: auto !important;
-      top: auto !important;
-      border-radius: 0 !important;
-      background: #172b2870 !important
+      background: linear-gradient(rgba(23, 43, 40, .56), rgba(23, 43, 40, .56)), url('assets/hero-bg.jpg') center 44% / cover no-repeat !important
     }
 
     .hero-background:after,
@@ -1152,7 +1104,6 @@
     .form-fields textarea {
       font-family: 'PT Sans', 'Arial', sans-serif !important
     }
-
     h1,
     h2,
     h3,
@@ -1175,7 +1126,6 @@
       font-weight: 400 !important;
       letter-spacing: -.075em !important
     }
-
     .tag,
     .form-fields button,
     .area small,
@@ -1597,7 +1547,8 @@
       transform: translateY(-3px)
     }
 
-    @media(max-width:760px) {}
+    @media(max-width:760px) {
+    }
 
     /* Transparent navigation over the first screen */
     .site-header {
@@ -2039,6 +1990,13 @@
       transform-origin: left
     }
 
+    /* Подчёркивание активного раздела при прокрутке */
+    .site-nav a.is-active:after,
+    .mobile-menu nav a.is-active:after {
+      transform: scaleX(1);
+      transform-origin: left
+    }
+
     .mobile-menu nav a:after {
       left: 7px;
       right: 7px;
@@ -2166,7 +2124,7 @@
     }
 
     @media(prefers-reduced-motion:reduce) {
-      .steps:before {
+    .steps:before {
         animation: none
       }
 
@@ -3017,9 +2975,11 @@
       display: none !important
     }
 
-    @media(max-width:760px) {}
+    @media(max-width:760px) {
+    }
 
-    @media(prefers-reduced-motion:reduce) {}
+    @media(prefers-reduced-motion:reduce) {
+    }
 
     .how>h2 {
       position: relative;
@@ -3415,8 +3375,7 @@
               class="mobile-hero-break"> <em>с внимательного<br class="mobile-hero-break"> разговора.</em></h1>
           <div class="hero-stats" aria-label="Ключевые показатели Step.Tour">
             <span><b>5.0</b><small>оценка</small></span><span><b>2014</b><small>дата
-                основания</small></span><span><b>50+</b><small>стран в ассортименте</small></span>
-          </div>
+                основания</small></span><span><b>50+</b><small>стран в ассортименте</small></span></div>
         </div>
       </div>
     </section>
@@ -3507,8 +3466,7 @@
               чудо света, необходимо оформить полноценную египетскую визу</strong></p>
           <p>Наши туристы об этом знали, поэтому сразу по прилете купили визу. Но есть один очень важный момент.</p>
           <p>После покупки <strong>вам вклеивают (или вы сами вклеиваете) визовую марку</strong> в паспорт, и на нее
-            <strong>обязательно должны поставить штамп.</strong> Только тогда виза имеет юридическую силу.
-          </p>
+            <strong>обязательно должны поставить штамп.</strong> Только тогда виза имеет юридическую силу.</p>
           <p>К сожалению, наши туристы забрали только марку и были уверены, что это и есть готовая виза. Позже они
             купили у своего гида экскурсию к пирамидам. Самое обидное, что гид тоже не проверил документы и спокойно
             продал экскурсию.</p>
@@ -3521,8 +3479,7 @@
       </details>
       <details class="case">
         <summary><b>02</b>
-          <h3>Отмена рейса и возврат денег: как мы помогли туристам</h3><span class="case-arrow"
-            aria-hidden="true">+</span>
+          <h3>Отмена рейса и возврат денег: как мы помогли туристам</h3><span class="case-arrow" aria-hidden="true">+</span>
         </summary>
         <div class="case-details">
           <p>В этом году наши туристы летели в Таиланд с пересадкой в Дубае. За несколько дней до вылета
@@ -3559,8 +3516,7 @@
             <article class="review review-slide"><q>Впервые отдохнули с супругом вдвоём и это было замечательно!
                 Отель порадовал просторным номером у моря, тишиной и разнообразием среди цветов. Огромное спасибо
                 турагенту step.tour и Валентине за поддержку на каждом этапе, это немаловажно было для нас, поскольку
-                опыта с подобных поездках мы не имели. Уже планируем новую поездку только через step.tour!
-                ❤️</q><small>Марина · Египет</small></article>
+                опыта с подобных поездках мы не имели. Уже планируем новую поездку только через step.tour! ❤️</q><small>Марина · Египет</small></article>
             <article class="review review-slide"><q>Мы не знали, где провести первый отпуск с ребёнком. Нам всё
                 разложили по полочкам и выбрали спокойный отель с коротким трансфером.</q><small>Семья Орловых ·
                 Крит</small></article>
@@ -3574,9 +3530,7 @@
         </div><button class="review-arrow review-next" type="button" aria-label="Следующий отзыв">→</button>
       </div>
       <div class="review-dots" aria-label="Навигация по отзывам"></div>
-      <a class="review-cta"
-        href="https://t.me/StepTour_official?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%D0%9E%D1%87%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D1%81%D1%8C%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2"
-        target="_blank" rel="noopener">Оставить отзыв</a>
+      <a class="review-cta" href="https://t.me/StepTour_official?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%D0%9E%D1%87%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D1%81%D1%8C%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%0A%0A" target="_blank" rel="noopener">Оставить отзыв</a>
     </section>
     <section class="guide" id="guide">
       <h2>Как описать<br>свои пожелания</h2>
@@ -3662,7 +3616,7 @@
           <!-- ВПИШИТЕ ВАШ НОМЕР ТЕЛЕФОНА: в href="tel:+7..." и в текст ссылки -->
           <li><a href="tel:">+7 (___) ___-__-__</a></li>
           <!-- ВПИШИТЕ ВАШУ ПОЧТУ: в href="mailto:..." и в текст ссылки -->
-          <li><a href="/cdn-cgi/l/email-protection#2f">_____@_____.__</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#e8">_____@_____.__</a></li>
           <li><a href="https://t.me/Step_tour_official" target="_blank" rel="noopener">Telegram</a></li>
         </ul>
       </div>
@@ -3679,9 +3633,8 @@
       <div class="footer-bottom">© 2026 Step.Tour — тур-агент · все права защищены</div>
     </footer>
   </main>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script>
-    document.documentElement.classList.add('js');
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.documentElement.classList.add('js');
     const intro = document.querySelector('.site-intro');
     const introReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -3733,7 +3686,7 @@
       ctaObserver.observe(contactBlockForCta);
     }
     let ticking = false;
-    function moveBackground() { if (!reduceMotion) { const top = hero.getBoundingClientRect().top; const shift = Math.max(-58, Math.min(58, -top * .14)); background.style.transform = `translateY(${shift}px) scale(1.05)`; } header.classList.toggle('is-scrolled', scrollY > 360); ticking = false; }
+    function moveBackground() { if (!reduceMotion) { const top = hero.getBoundingClientRect().top; const shift = Math.max(-70, Math.min(70, top * .08)); background.style.transform = `translateY(${shift}px) scale(1.05)`; } header.classList.toggle('is-scrolled', scrollY > 360); ticking = false; }
     addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(moveBackground); ticking = true } }, { passive: true }); moveBackground();
     const heroCtas = document.querySelectorAll('.hero .cta-variant'), contactSection = document.querySelector('#contact');
     heroCtas.forEach(heroCta => heroCta.addEventListener('click', event => { event.preventDefault(); contactSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); history.replaceState(null, '', '#contact'); }));
@@ -3942,6 +3895,29 @@
       threadObserver.observe(processBlock);
     } else if (processBlock) { processBlock.classList.add('thread-visible'); }
 
+    /* Подчёркивает пункт шапки, когда его раздел накрывает линию просмотра
+       (40% высоты экрана). На первом экране и после последнего раздела — ничего. */
+    const navSections = ['about', 'directions', 'process', 'team', 'reviews']
+      .map(id => document.querySelector('#' + id))
+      .filter(Boolean);
+    const highlightCurrentSection = () => {
+      const line = scrollY + innerHeight * .4;
+      const current = navSections.find(section => {
+        const rect = section.getBoundingClientRect();
+        const top = rect.top + scrollY, bottom = rect.bottom + scrollY;
+        return line >= top && line < bottom;
+      });
+      navSections.forEach(section => {
+        const active = section === current;
+        document.querySelectorAll('.site-nav a[href="#' + section.id + '"], .mobile-menu nav a[href="#' + section.id + '"]')
+          .forEach(link => link.classList.toggle('is-active', active));
+      });
+    };
+    let navTicking = false;
+    addEventListener('scroll', () => { if (!navTicking) { requestAnimationFrame(() => { highlightCurrentSection(); navTicking = false; }); navTicking = true; } }, { passive: true });
+    addEventListener('resize', highlightCurrentSection);
+    highlightCurrentSection();
+
     /* Mobile menu closes on an outside tap, navigation tap, or page scroll. */
     const mobileMenu = document.querySelector('.mobile-menu');
     if (mobileMenu) {
@@ -3952,7 +3928,6 @@
       addEventListener('scroll', () => { if (mobileMenu.open) mobileMenu.open = false; }, { passive: true });
     }
   </script>
-  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a35f4fd8d9ddad45',t:'MTc4ODU0OTIxMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a35fb0adaf872687',t:'MTc4ODU1MzE3Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
