@@ -5,7 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Step.Tour — тур-агент</title>
-  <link rel="icon" href="assets/05-horizon.svg" type="image/svg+xml">
+  <meta name="description"
+    content="Step.Tour — тур-агент с человеческим подходом: не продаём «горячие» туры, а слушаем, советуем и помогаем оформить путешествие под вас. Оставьте заявку — предложим варианты.">
+  <!-- Для соцсетей при публикации замените assets/hero-road.jpg на полный адрес: https://ваш-домен/assets/hero-road.jpg -->
+  <meta property="og:title" content="Step.Tour — тур-агент">
+  <meta property="og:description"
+    content="Не продаём «горячие» туры — слушаем, советуем и подбираем путешествие под вас.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-road.jpg">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="shortcut icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -44,49 +52,12 @@
       text-transform: uppercase
     }
 
-    .logo {
-      font: bold 16px Georgia, serif
-    }
-
     .hero {
       height: 545px;
       position: relative;
       overflow: hidden;
       background: #677b72;
       color: #f8f4ec
-    }
-
-    .hero-photo {
-      position: absolute;
-      z-index: 3;
-      right: 42px;
-      bottom: 33px;
-      width: 190px;
-      height: 245px;
-      padding: 8px 8px 28px;
-      background: #f8f4ec;
-      box-shadow: 5px 7px 13px #1c342b88;
-      transform: rotate(3deg);
-      will-change: transform
-    }
-
-    .hero-photo:before {
-      content: '';
-      display: block;
-      height: 100%;
-      background: #70918a;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
-    }
-
-    .hero-photo:after {
-      content: '';
-      position: absolute;
-      left: 8px;
-      right: 8px;
-      bottom: 28px;
-      height: 49%;
-      background: #2b5047;
-      border-radius: 52% 46% 0 0
     }
 
     .hero:before {
@@ -126,16 +97,6 @@
     .hero p {
       font: 17px/1.35 Georgia, serif;
       max-width: 335px
-    }
-
-    .pill {
-      display: inline-block;
-      border: 1px solid #f8f4ec;
-      border-radius: 20px;
-      padding: 10px 15px;
-      font-size: 9px;
-      letter-spacing: .1em;
-      text-transform: uppercase
     }
 
     .paper {
@@ -444,8 +405,8 @@
     }
 
     .gstep p {
-      font-size: 10px;
-      line-height: 1.45;
+      font-size: 14px;
+      line-height: 1.55;
       margin: 0
     }
 
@@ -508,13 +469,6 @@
         padding-right: 22px
       }
 
-      .hero-photo {
-        width: 126px;
-        height: 166px;
-        right: 18px;
-        bottom: 22px
-      }
-
       .hero h1 {
         font-size: 48px
       }
@@ -572,13 +526,6 @@
 
       .hero p {
         max-width: 420px
-      }
-
-      .hero-photo {
-        width: 270px;
-        height: 350px;
-        right: 76px;
-        bottom: 42px
       }
 
       .paper {
@@ -676,7 +623,6 @@
       }
 
       .cases h2 {
-        grid-row: 1 / span 3;
         text-align: left;
         font-size: 44px
       }
@@ -773,12 +719,6 @@
       margin-top: 0 !important
     }
 
-    .contact-form {
-      background: #f5f0e5;
-      padding: 54px 44px;
-      border-top: 1px solid #aba79b
-    }
-
     .contact-form h2 {
       font: normal 34px/.96 Georgia, serif;
       margin: 0 0 14px
@@ -822,27 +762,6 @@
       cursor: pointer
     }
 
-    .top-links {
-      display: flex;
-      gap: 17px
-    }
-
-    .top-links a {
-      color: inherit;
-      text-decoration: none;
-      font-size: 9px;
-      letter-spacing: .12em;
-      text-transform: uppercase
-    }
-
-    .top-links a:hover {
-      text-decoration: underline
-    }
-
-    .pill {
-      text-decoration: none
-    }
-
     .cta {
       text-decoration: none;
       display: inline-block
@@ -877,18 +796,9 @@
       .nav {
         position: relative
       }
-
-      .top-links {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%)
-      }
     }
 
     @media(max-width:560px) {
-      .top-links {
-        display: none
-      }
 
       .form-status {
         margin-top: 10px
@@ -937,13 +847,6 @@
       .hero p {
         font-size: 20px;
         max-width: 460px
-      }
-
-      .hero-photo {
-        width: clamp(270px, 20vw, 350px);
-        height: clamp(350px, 29vw, 445px);
-        right: clamp(55px, 9vw, 150px);
-        bottom: clamp(40px, 6vh, 76px)
       }
 
       .paper,
@@ -1088,13 +991,6 @@
       padding-top: clamp(88px, 13vh, 155px)
     }
 
-    .hero-label {
-      font-size: 10px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: 19px
-    }
-
     .hero h1 {
       margin: 0 0 22px !important;
       font-size: clamp(84px, 9.5vw, 156px) !important;
@@ -1163,7 +1059,6 @@
       margin-bottom: 31px !important
     }
 
-    .hero-label,
     .hero .nav {
       display: none !important
     }
@@ -1251,45 +1146,6 @@
       }
     }
 
-    /* Hero call-to-action */
-    .hero .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 20px;
-      background: #f5f0e5;
-      color: #243e36;
-      border: 0;
-      border-radius: 2px;
-      padding: 8px 8px 8px 19px;
-      font: 10px Arial, sans-serif;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      box-shadow: 0 9px 24px #14231b55;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease
-    }
-
-    .hero .pill:after {
-      content: '↗';
-      display: grid;
-      place-items: center;
-      width: 31px;
-      height: 31px;
-      background: #b44f38;
-      color: #fff8ee;
-      font: 18px Georgia, serif
-    }
-
-    .hero .pill:hover {
-      transform: translateY(-3px);
-      background: #fffdf7;
-      box-shadow: 0 13px 28px #14231b70
-    }
-
-    .hero .pill:focus-visible {
-      outline: 2px solid #fffdf7;
-      outline-offset: 4px
-    }
-
     /* Typography system — condensed service/editorial contrast */
     body,
     .form-fields input,
@@ -1300,7 +1156,6 @@
     h1,
     h2,
     h3,
-    .logo,
     .area b,
     .case b,
     .case h3,
@@ -1322,9 +1177,6 @@
     }
 
     .tag,
-    .top-links a,
-    .pill,
-    .btn,
     .form-fields button,
     .area small,
     .review small {
@@ -1390,7 +1242,6 @@
       padding: 38px 44px !important;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       text-align: center;
       border: 1px solid #aaa397 !important;
       background: #fbf8f0 !important
@@ -1398,6 +1249,7 @@
 
     .review-slide q {
       display: block;
+      margin: auto 0;
       font: normal clamp(23px, 2.15vw, 31px)/1.18 'Prata', 'Georgia', serif;
       letter-spacing: -.025em
     }
@@ -1525,7 +1377,7 @@
 
     .review-slide q {
       max-width: 980px;
-      margin: 0 auto;
+      margin: auto;
       font-size: clamp(26px, 2.4vw, 39px) !important;
       line-height: 1.14 !important
     }
@@ -1735,15 +1587,6 @@
       }
     }
 
-    /* Three CTA directions for review */
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap
-    }
-
     .cta-variant {
       color: inherit;
       text-decoration: none;
@@ -1754,154 +1597,7 @@
       transform: translateY(-3px)
     }
 
-    .cta-ticket {
-      display: inline-flex;
-      align-items: center;
-      gap: 20px;
-      background: #f7f1e5;
-      color: #263d35;
-      padding: 8px 8px 8px 18px;
-      font: 500 10px 'PT Sans', Arial, sans-serif;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      box-shadow: 0 9px 24px #14231b55
-    }
-
-    .cta-ticket i {
-      display: grid;
-      place-items: center;
-      width: 31px;
-      height: 31px;
-      background: #b44f38;
-      color: #fff8ee;
-      font: 18px Georgia, serif;
-      font-style: normal
-    }
-
-    .cta-route {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 15px;
-      border: 1px solid #f7f1e5;
-      background: #223e3a66;
-      color: #fff9ef;
-      font: 500 10px 'PT Sans', Arial, sans-serif;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      backdrop-filter: blur(4px)
-    }
-
-    .cta-route i {
-      font: 19px Georgia, serif;
-      font-style: normal;
-      color: #e8c26c
-    }
-
-    .cta-route b {
-      font: 18px Georgia, serif;
-      font-weight: normal
-    }
-
-    .cta-route:hover {
-      background: #f7f1e5;
-      color: #263d35
-    }
-
-    .cta-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 174px;
-      padding: 10px 11px 10px 14px;
-      background: #e7d8bd;
-      color: #273a32;
-      box-shadow: 0 7px 18px #14231b4d;
-      text-align: left
-    }
-
-    .cta-card strong {
-      display: block;
-      font: normal 17px/1 'Prata', 'Georgia', serif
-    }
-
-    .cta-card small {
-      display: block;
-      margin-top: 4px;
-      font: 500 8px 'PT Sans', Arial, sans-serif;
-      letter-spacing: .08em;
-      text-transform: uppercase
-    }
-
-    .cta-card>i {
-      display: grid;
-      place-items: center;
-      width: 27px;
-      height: 27px;
-      border: 1px solid #688075;
-      border-radius: 50%;
-      font: 18px Georgia, serif;
-      font-style: normal
-    }
-
-    @media(max-width:760px) {
-      .hero-actions {
-        max-width: 260px;
-        gap: 9px
-      }
-
-      .cta-ticket {
-        width: 100%;
-        justify-content: space-between
-      }
-
-      .cta-route,
-      .cta-card {
-        flex: 1
-      }
-
-      .cta-route {
-        padding: 12px 10px;
-        gap: 7px
-      }
-
-      .cta-route span {
-        font-size: 8px
-      }
-
-      .cta-card {
-        min-width: 0;
-        padding: 9px 8px 9px 11px
-      }
-
-      .cta-card strong {
-        font-size: 15px
-      }
-    }
-
-    .cta-route svg {
-      width: 19px;
-      height: 19px;
-      fill: none;
-      stroke: #e8c26c;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex: none
-    }
-
-    .cta-route:hover svg {
-      stroke: #b44f38
-    }
-
-    .hero-actions:has(.cta-route:only-child) {
-      display: block
-    }
-
-    .hero-actions .cta-route {
-      min-width: 214px;
-      justify-content: center
-    }
+    @media(max-width:760px) {}
 
     /* Transparent navigation over the first screen */
     .site-header {
@@ -2113,17 +1809,6 @@
       color: #b44f38
     }
 
-    .intro-rule {
-      position: absolute;
-      width: min(390px, 48vw);
-      height: 1px;
-      background: #b44f38;
-      top: calc(50% + clamp(48px, 5vw, 84px));
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: introRule .45s ease .62s forwards
-    }
-
     .site-intro.intro-finish {
       transform: translateY(-18%);
       opacity: 0;
@@ -2138,21 +1823,10 @@
       }
     }
 
-    @keyframes introRule {
-      to {
-        transform: scaleX(1)
-      }
-    }
-
     @media(prefers-reduced-motion:reduce) {
       .site-intro {
         display: none
       }
-    }
-
-    /* Intro variant 1: a route draws itself under the agency name */
-    .intro-rule {
-      display: none
     }
 
     .intro-route {
@@ -2439,42 +2113,6 @@
       .step+.step {
         margin-top: 4px
       }
-
-      .trail-walker {
-        display: none
-      }
-    }
-
-    /* A small walker traces the dotted route */
-    .trail-walker {
-      position: absolute;
-      z-index: 4;
-      left: 2%;
-      top: 58%;
-      width: 22px;
-      height: 35px;
-      color: #b44f38;
-      pointer-events: none;
-      animation: walkRoute 8.4s linear infinite
-    }
-
-    .trail-walker svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-      animation: walkerBob .42s ease-in-out infinite alternate
-    }
-
-    .trail-walker circle {
-      fill: currentColor
-    }
-
-    .trail-walker path {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round
     }
 
     @keyframes threadReveal {
@@ -2503,46 +2141,6 @@
       }
     }
 
-    @keyframes walkRoute {
-      0% {
-        left: 2%;
-        top: 57%;
-        transform: scaleX(1)
-      }
-
-      17% {
-        left: 21%;
-        top: 35%
-      }
-
-      38% {
-        left: 43%;
-        top: 59%
-      }
-
-      59% {
-        left: 63%;
-        top: 35%
-      }
-
-      78% {
-        left: 82%;
-        top: 57%
-      }
-
-      100% {
-        left: 95%;
-        top: 40%;
-        transform: scaleX(1)
-      }
-    }
-
-    @keyframes walkerBob {
-      to {
-        transform: translateY(-3px) rotate(-3deg)
-      }
-    }
-
     @media(min-width:761px) {
       .step:nth-of-type(1) {
         transform: translateY(17px) rotate(-1.1deg)
@@ -2568,9 +2166,6 @@
     }
 
     @media(prefers-reduced-motion:reduce) {
-
-      .trail-walker,
-      .trail-walker svg,
       .steps:before {
         animation: none
       }
@@ -2786,7 +2381,10 @@
     .contact-form {
       display: grid;
       grid-template-columns: 1fr;
-      row-gap: 42px !important
+      row-gap: 42px !important;
+      background: #f5f0e5;
+      padding: 54px 44px;
+      border-top: 1px solid #aba79b
     }
 
     .contact-form .tag {
@@ -2796,6 +2394,7 @@
     }
 
     .contact-form h2 {
+      text-align: left !important;
       margin-bottom: 23px !important
     }
 
@@ -2937,6 +2536,25 @@
       }
     }
 
+    /* Ссылка «Оставить отзыв» — открывает Telegram с готовым текстом */
+    .review-cta {
+      display: block;
+      width: max-content;
+      margin: 26px auto 0;
+      color: #345047;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font: 700 10px 'PT Sans', Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .3s
+    }
+
+    .review-cta:hover,
+    .review-cta:focus-visible {
+      color: #b44f38
+    }
+
     /* More compact review quote text */
     .review-slide q {
       font-size: clamp(22px, 1.85vw, 30px) !important;
@@ -2952,9 +2570,11 @@
     /* Cases section intro */
     .cases-intro {
       margin: 40px 0 0;
-      color: #5b5d56;
-      font: 400 18px/1.55 'PT Sans', Arial, sans-serif;
-      max-width: 360px;
+      color: #34332e;
+      font: 400 15px/1.5 'PT Sans', Arial, sans-serif;
+      letter-spacing: -.01em;
+      text-align: left;
+      max-width: 390px;
     }
 
     .cases-intro:before {
@@ -2967,17 +2587,20 @@
       transform: rotate(-1.2deg);
     }
 
+    /* Левая колонка кейсов тянется на всю высоту секции,
+       подпись прижата к низу и остаётся там при раскрытии кейсов */
     @media (min-width: 761px) {
-      .cases h2 {
-        grid-row: 1 !important;
+      .cases-head {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column
       }
 
       .cases-intro {
-        grid-column: 1;
-        grid-row: 2;
-        align-self: start;
-        margin-top: 0;
-        transform: translateY(155px);
+        margin: auto 0 0;
+        transform: none
       }
     }
 
@@ -3065,10 +2688,6 @@
       line-height: 1.55
     }
 
-    .case-details p+p {
-      color: #5f625c
-    }
-
     @media(max-width:760px) {
       .cases .case {
         grid-column: auto
@@ -3092,7 +2711,7 @@
       }
     }
 
-    /* Trip dates */
+    /* Trip dates: one field with a classic popup calendar */
     .trip-dates {
       grid-column: 1 / -1;
       margin: 0;
@@ -3106,13 +2725,7 @@
       letter-spacing: -.025em
     }
 
-    .trip-date-fields {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px
-    }
-
-    .trip-date-fields label {
+    .trip-range-field {
       display: grid;
       gap: 7px;
       color: #5d615b;
@@ -3121,16 +2734,177 @@
       text-transform: uppercase
     }
 
-    .trip-date-fields input {
-      margin: 0 !important
+    .trip-range-box {
+      position: relative
+    }
+
+    .trip-range-box input {
+      margin: 0 !important;
+      padding-right: 34px;
+      text-transform: none;
+      letter-spacing: normal;
+      cursor: pointer
+    }
+
+    .trip-range-box input:focus {
+      border-bottom-color: #355146
+    }
+
+    .trip-range-icon {
+      position: absolute;
+      right: 2px;
+      bottom: 14px;
+      width: 17px;
+      height: 17px;
+      color: #77776e;
+      pointer-events: none
+    }
+
+    /* Классический календарь */
+    .trip-calendar {
+      position: fixed;
+      z-index: 60;
+      top: 0;
+      left: 0;
+      width: min(308px, calc(100vw - 24px));
+      padding: 12px;
+      background: #fff;
+      border: 1px solid #b3b3b3;
+      border-radius: 4px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .16);
+      font: 400 13px/1.4 Arial, Helvetica, sans-serif;
+      letter-spacing: normal;
+      text-transform: none;
+      color: #222
+    }
+
+    .trip-calendar[hidden] {
+      display: none
+    }
+
+    /* Страховка: никакие сторонние правила кнопок не действуют внутри календаря */
+    .trip-calendar button {
+      margin: 0;
+      width: auto;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: inherit;
+      font: 400 13px Arial, Helvetica, sans-serif;
+      letter-spacing: normal;
+      text-transform: none;
+      cursor: pointer
+    }
+
+    .trip-cal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px
+    }
+
+    .trip-cal-title {
+      flex: 1;
+      text-align: center;
+      font: 700 14px Arial, Helvetica, sans-serif;
+      color: #222
+    }
+
+    .trip-cal-nav {
+      display: flex
+    }
+
+    .trip-cal-nav button {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 3px;
+      background: transparent;
+      color: #333;
+      font: 400 17px/1 Arial, Helvetica, sans-serif;
+      cursor: pointer
+    }
+
+    .trip-cal-nav button:hover:not([disabled]) {
+      background: #e6e6e6
+    }
+
+    .trip-cal-nav button[disabled] {
+      opacity: .35;
+      cursor: default
+    }
+
+    .trip-cal-weekdays,
+    .trip-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px
+    }
+
+    .trip-cal-weekdays span {
+      padding: 2px 0 4px;
+      text-align: center;
+      font: 700 11px Arial, Helvetica, sans-serif;
+      color: #6e6e6e
+    }
+
+    .trip-cal-weekdays span:nth-child(6),
+    .trip-cal-weekdays span:nth-child(7) {
+      color: #b03a2e
+    }
+
+    .trip-cal-day {
+      height: 32px;
+      padding: 0;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background: #fff;
+      color: #222;
+      font: 400 13px Arial, Helvetica, sans-serif;
+      cursor: pointer
+    }
+
+    .trip-cal-day.is-weekend {
+      color: #b03a2e
+    }
+
+    .trip-cal-day:hover:not([disabled]) {
+      background: #eaeaea
+    }
+
+    .trip-cal-day[disabled] {
+      color: #adadad;
+      background: #fff;
+      cursor: default
+    }
+
+    .trip-cal-day.is-today {
+      border-color: #8c8c8c;
+      font-weight: 700
+    }
+
+    .trip-cal-day.is-edge {
+      background: #4d4d4d;
+      border-color: #4d4d4d;
+      color: #fff;
+      font-weight: 700
+    }
+
+    .trip-cal-day.is-edge:hover:not([disabled]) {
+      background: #1f1f1f
+    }
+
+    .trip-cal-day.in-range {
+      background: #dedede
+    }
+
+    .trip-cal-day.in-preview {
+      background: #ededed
     }
 
     @media(max-width:560px) {
-      .trip-date-fields {
-        grid-template-columns: 1fr;
-        gap: 15px
-      }
-
       .trip-dates legend {
         font-size: 20px
       }
@@ -3143,29 +2917,6 @@
       width: 1px !important;
       height: 1px !important;
       opacity: 0 !important
-    }
-
-    .captcha-placeholder {
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 14px;
-      border: 1px dashed #bdb2a1;
-      color: #6d7069;
-      font-size: 11px;
-      line-height: 1.35
-    }
-
-    .captcha-placeholder span {
-      display: grid;
-      place-items: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #e3d5b8;
-      color: #344d42;
-      font-weight: bold
     }
 
     .privacy-consent {
@@ -3197,8 +2948,6 @@
     }
 
     @media(max-width:560px) {
-
-      .captcha-placeholder,
       .privacy-consent {
         font-size: 10px
       }
@@ -3268,75 +3017,9 @@
       display: none !important
     }
 
-    .steps-footpath {
-      position: absolute;
-      z-index: 0;
-      pointer-events: none;
-      opacity: .72;
-      clip-path: inset(0 100% 0 0)
-    }
+    @media(max-width:760px) {}
 
-    .steps-footpath-desktop ellipse {
-      rx: 2.5px;
-      ry: 5px
-    }
-
-    .steps-footpath-mobile ellipse {
-      rx: 5px;
-      ry: 2.5px
-    }
-
-    .steps-footpath-desktop {
-      display: block;
-      top: -34px;
-      left: 0;
-      width: 100%;
-      height: 280px
-    }
-
-    .steps-footpath-mobile {
-      display: none
-    }
-
-    .how.thread-visible .steps-footpath-desktop {
-      animation: footpathReveal 9s cubic-bezier(.22, .61, .36, 1) forwards
-    }
-
-    @keyframes footpathReveal {
-      from {
-        clip-path: inset(0 100% 0 0)
-      }
-
-      to {
-        clip-path: inset(0 0 0 0)
-      }
-    }
-
-    @media(max-width:760px) {
-      .steps-footpath-desktop {
-        display: none
-      }
-
-      .steps-footpath-mobile {
-        display: block;
-        top: -31px;
-        left: calc(100% - 48px);
-        width: 42px;
-        height: calc(100% + 62px);
-        clip-path: inset(0 0 100% 0)
-      }
-
-      .how.thread-visible .steps-footpath-mobile {
-        animation: footpathRevealMobile 9s cubic-bezier(.22, .61, .36, 1) forwards
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      .steps-footpath {
-        animation: none !important;
-        clip-path: none !important
-      }
-    }
+    @media(prefers-reduced-motion:reduce) {}
 
     .how>h2 {
       position: relative;
@@ -3347,11 +3030,6 @@
       .how>h2 {
         top: -10px
       }
-    }
-
-    /* Dotted route between process cards — follows the three arcs in the layout */
-    .steps-footpath {
-      display: none !important
     }
 
     .steps-route-lines {
@@ -3454,50 +3132,82 @@
 
     /* Footer */
     .site-footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 76px;
-      padding: 18px;
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      gap: 26px 44px;
+      align-items: start;
+      padding: 44px 44px 20px;
       background: #2d4a40
     }
 
+    .footer-col {
+      min-width: 0
+    }
+
+    .footer-fill {
+      display: block;
+      color: rgba(247, 242, 232, .52);
+      font: 400 14px/1.5 'PT Sans', Arial, sans-serif;
+      letter-spacing: .02em
+    }
+
+    .footer-heading {
+      display: block;
+      margin: 0 0 13px;
+      color: #d9ba6b;
+      font: 700 10px 'PT Sans', Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .footer-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px
+    }
+
     .site-footer a {
-      position: relative;
       color: #f7f2e8;
-      text-decoration: none;
-      font: normal 18px 'Prata', Georgia, serif;
-      letter-spacing: -.025em
+      text-decoration: none !important;
+      font: 400 14px 'PT Sans', Arial, sans-serif;
+      letter-spacing: .02em;
+      transition: color .3s
     }
 
-    .site-footer a:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 1px;
-      background: #d9ba6b;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .45s cubic-bezier(.16, 1, .3, 1)
+    .site-footer a:hover,
+    .site-footer a:focus-visible {
+      color: #d96b45
     }
 
-    .site-footer a:hover:after,
-    .site-footer a:focus-visible:after {
-      transform: scaleX(1);
-      transform-origin: left
+    .footer-bottom {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(245, 240, 229, .18);
+      color: rgba(247, 242, 232, .66);
+      font: 400 12px 'PT Sans', Arial, sans-serif;
+      letter-spacing: .04em
     }
 
-    @media(max-width:560px) {
+    @media(max-width:760px) {
       .site-footer {
-        min-height: 96px
-      }
-
-      .site-footer a {
-        font-size: 23px
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 24px 16px
       }
     }
+
+    /* Футер всегда прижат к нижнему краю экрана — без светлой полосы под ним */
+    .page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100svh
+    }
+
 
     /* Swap colours after reordering the two sections */
     .areas {
@@ -3705,7 +3415,8 @@
               class="mobile-hero-break"> <em>с внимательного<br class="mobile-hero-break"> разговора.</em></h1>
           <div class="hero-stats" aria-label="Ключевые показатели Step.Tour">
             <span><b>5.0</b><small>оценка</small></span><span><b>2014</b><small>дата
-                основания</small></span><span><b>50+</b><small>стран в ассортименте</small></span></div>
+                основания</small></span><span><b>50+</b><small>стран в ассортименте</small></span>
+          </div>
         </div>
       </div>
     </section>
@@ -3782,8 +3493,10 @@
       </div>
     </section>
     <section class="cases">
-      <h2>Наши кейсы</h2>
-      <p class="cases-intro">Мы решаем ваши проблемы, не оставляя их вам</p>
+      <div class="cases-head">
+        <h2>Наши кейсы</h2>
+        <p class="cases-intro">Решаем проблемы, не оставляя их вам</p>
+      </div>
       <details class="case">
         <summary><b>01</b>
           <h3>Египет</h3><span class="case-arrow" aria-hidden="true">+</span>
@@ -3794,7 +3507,8 @@
               чудо света, необходимо оформить полноценную египетскую визу</strong></p>
           <p>Наши туристы об этом знали, поэтому сразу по прилете купили визу. Но есть один очень важный момент.</p>
           <p>После покупки <strong>вам вклеивают (или вы сами вклеиваете) визовую марку</strong> в паспорт, и на нее
-            <strong>обязательно должны поставить штамп.</strong> Только тогда виза имеет юридическую силу.</p>
+            <strong>обязательно должны поставить штамп.</strong> Только тогда виза имеет юридическую силу.
+          </p>
           <p>К сожалению, наши туристы забрали только марку и были уверены, что это и есть готовая виза. Позже они
             купили у своего гида экскурсию к пирамидам. Самое обидное, что гид тоже не проверил документы и спокойно
             продал экскурсию.</p>
@@ -3807,23 +3521,20 @@
       </details>
       <details class="case">
         <summary><b>02</b>
-          <h3>Таиланд с пересадкой в Дубае</h3><span class="case-arrow" aria-hidden="true">+</span>
+          <h3>Отмена рейса и возврат денег: как мы помогли туристам</h3><span class="case-arrow"
+            aria-hidden="true">+</span>
         </summary>
         <div class="case-details">
-          <p>Наши туристы <strong>летели в Таиланд с пересадкой в Дубае</strong> авиакомпанией Emirates. И буквально за
-            пару дней до вылета <strong>закрывают воздушное пространство.</strong> Этот момент неопределенности. Откроют
-            ли его? Спойлер, его не открыли.</p>
-          <p>Как только появилась официальная информация о возвратах, <strong>мы сразу подали заявление и запросили
-              возврат средств</strong>, параллельно перенесли трансфер на новые рейсы (новые авиабилеты туристы покупали
-            уже отдельно).</p>
-          <p><strong>А дальше ожидание. День, два, неделя…</strong> Наши туристы уже успели слетать и вернуться из
-            отпуска, а деньги так и не приходят. Сроки подходят к концу, и в какой-то момент <strong>приходит сообщение:
-              «руководство приостановило выплаты по возвратам».</strong> Мы были и обескуражены, и возмущены
-            одновременно.</p>
-          <p>Быстро собираемся, <strong>готовим досудебную претензию, параллельно готовимся выходить в суд</strong>. Все
-            это время на связи с туристами, потому что понимаем, насколько это неприятная и нервная ситуация.</p>
-          <p>И вот, <strong>спустя месяц</strong> и одной досудебной претензии… <strong>денежные средства дошли до наших
-              туристов.</strong></p>
+          <p>В этом году наши туристы летели в Таиланд с пересадкой в Дубае. За несколько дней до вылета
+            воздушное пространство закрыли, и рейсы пришлось отменить.</p>
+          <p>Как только авиакомпания объявила о возвратах, мы сразу подали заявление на возврат средств и
+            перенесли трансфер на новые рейсы. Туристы самостоятельно приобрели новые билеты и отправились
+            в отпуск.</p>
+          <p>Однако возврат затянулся. Спустя время авиакомпания сообщила о приостановке выплат.</p>
+          <p>Мы подготовили досудебную претензию и начали готовиться к обращению в суд. Через месяц средства
+            полностью вернулись туристам.</p>
+          <p>Это один из примеров, почему в сложных ситуациях важно иметь рядом специалиста, который знает
+            порядок действий и доводит вопрос до результата.</p>
         </div>
       </details>
       <details class="case">
@@ -3842,10 +3553,14 @@
           type="button" aria-label="Предыдущий отзыв">←</button>
         <div class="review-viewport">
           <div class="review-track">
-            <article class="review review-slide"><q>Сначала задали очень точные вопросы, а потом прислали три варианта —
-                один из них оказался именно нашим.</q><small>Марина · Мадейра</small></article>
-            <article class="review review-slide"><q>Помогли разобраться с документами и пересадкой. Впервые поездка
-                началась без тревоги.</q><small>Игорь · Япония</small></article>
+            <article class="review review-slide"><q>Максимально разносторонний отдых: песчаный пляж, тёплое море,
+                активности и Land of Legends в 10 минутах.<br><br>Спасибо step.tour за совет и помощь с выбором
+                отеля! Ездил сюда уже 2 раза и точно вернусь снова.</q><small>Тимур · Турция</small></article>
+            <article class="review review-slide"><q>Впервые отдохнули с супругом вдвоём и это было замечательно!
+                Отель порадовал просторным номером у моря, тишиной и разнообразием среди цветов. Огромное спасибо
+                турагенту step.tour и Валентине за поддержку на каждом этапе, это немаловажно было для нас, поскольку
+                опыта с подобных поездках мы не имели. Уже планируем новую поездку только через step.tour!
+                ❤️</q><small>Марина · Египет</small></article>
             <article class="review review-slide"><q>Мы не знали, где провести первый отпуск с ребёнком. Нам всё
                 разложили по полочкам и выбрали спокойный отель с коротким трансфером.</q><small>Семья Орловых ·
                 Крит</small></article>
@@ -3859,6 +3574,9 @@
         </div><button class="review-arrow review-next" type="button" aria-label="Следующий отзыв">→</button>
       </div>
       <div class="review-dots" aria-label="Навигация по отзывам"></div>
+      <a class="review-cta"
+        href="https://t.me/StepTour_official?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%D0%9E%D1%87%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D1%81%D1%8C%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2"
+        target="_blank" rel="noopener">Оставить отзыв</a>
     </section>
     <section class="guide" id="guide">
       <h2>Как описать<br>свои пожелания</h2>
@@ -3878,7 +3596,7 @@
       <article class="gstep"><b>03</b>
         <div>
           <h3>Озвучьте бюджет и «нет»</h3>
-          <p>Например: до 3 000 € на двоих, без ночных рейсов и шумных отелей.</p>
+          <p>Например: до 200.000₽, без ночных рейсов и шумных отелей.</p>
         </div>
       </article>
     </section>
@@ -3900,24 +3618,31 @@
                 aria-label="Удалить путешественника" hidden>×</button></div>
           </div><button class="add-traveller" type="button">+ Добавить путешественника</button>
         </fieldset>
+
+        <div class="contact-inputs"><label class="sr-only" for="phone-value">Телефон</label><input id="phone-value"
+            name="phone" type="tel" placeholder="Телефон" autocomplete="tel" required><label class="sr-only"
+            for="email-value">Email</label><input id="email-value" name="email" type="email" placeholder="Email"
+            autocomplete="email" required></div>
         <fieldset class="trip-dates">
-          <div class="trip-date-fields"><label><span>Начало поездки</span><input id="trip-start" name="trip_start"
-                type="date" required></label><label><span>Окончание поездки</span><input id="trip-end" name="trip_end"
-                type="date" required></label></div>
+          <div class="trip-range-field">
+            <label class="sr-only" for="trip-dates-value">Даты поездки</label>
+            <div class="trip-range-box" id="trip-range-box">
+              <input id="trip-dates-value" name="trip_dates" type="text" placeholder="Начало поездки — окончание"
+                readonly autocomplete="off" required aria-haspopup="dialog">
+              <svg class="trip-range-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"
+                aria-hidden="true">
+                <rect x="2.5" y="4.2" width="15" height="13.3" rx="1.5"></rect>
+                <path d="M2.5 8.2h15M6.4 2v3.4M13.6 2v3.4"></path>
+              </svg>
+              <input type="hidden" name="trip_start" id="trip-start">
+              <input type="hidden" name="trip_end" id="trip-end">
+              <div class="trip-calendar" id="trip-calendar" hidden></div>
+            </div>
+          </div>
         </fieldset>
-        <div class="contact-inputs"><label class="sr-only" for="budget-value">Бюджет</label><input id="budget-value"
-            name="budget" type="text" placeholder="Бюджет" autocomplete="off" required><label class="sr-only"
-            for="phone-value">Телефон</label><input id="phone-value" name="phone" type="tel" placeholder="Телефон"
-            autocomplete="tel" required></div>
-        <div class="contact-inputs optional-contacts"><label class="sr-only" for="max-value">Max</label><input
-            id="max-value" name="max" type="text" placeholder="Max (необязательно)" autocomplete="off"><label
-            class="sr-only" for="telegram-value">Telegram</label><input id="telegram-value" name="telegram" type="text"
-            placeholder="Telegram (необязательно)" autocomplete="off"></div>
         <label class="sr-only" for="message">Пожелания к поездке</label><textarea id="message" name="message"
-          placeholder="Куда и когда хотите поехать? Что для вас важно?" required></textarea>
+          placeholder="Куда и когда хотите поехать? Что для вас важно? Какой бюджет?" required></textarea>
         <input class="honeypot" name="company_site" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="captcha-placeholder" id="captcha-placeholder"><span>✓</span> Защита от спама будет подключена перед
-          запуском</div>
         <label class="privacy-consent"><input name="privacy_consent" type="checkbox" required><span>Я соглашаюсь с <a
               href="privacy-policy.html" target="_blank" rel="noopener">политикой конфиденциальности</a> и обработкой
             персональных данных.</span></label>
@@ -3925,9 +3650,36 @@
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
-    <footer class="site-footer"><a href="https://t.me/Step_tour_official" target="_blank" rel="noopener">Telegram</a>
+    <footer class="site-footer">
+      <div class="footer-col">
+        <b class="footer-heading">Исполнитель</b>
+        <!-- ВПИШИТЕ ДАННЫЕ ИСПОЛНИТЕЛЯ: название компании или ФИО -->
+        <span class="footer-fill">Наименование исполнителя</span>
+      </div>
+      <div class="footer-col">
+        <b class="footer-heading">Контакты</b>
+        <ul class="footer-list">
+          <!-- ВПИШИТЕ ВАШ НОМЕР ТЕЛЕФОНА: в href="tel:+7..." и в текст ссылки -->
+          <li><a href="tel:">+7 (___) ___-__-__</a></li>
+          <!-- ВПИШИТЕ ВАШУ ПОЧТУ: в href="mailto:..." и в текст ссылки -->
+          <li><a href="/cdn-cgi/l/email-protection#2f">_____@_____.__</a></li>
+          <li><a href="https://t.me/Step_tour_official" target="_blank" rel="noopener">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <b class="footer-heading">Документы</b>
+        <ul class="footer-list">
+          <li><a href="privacy-policy.html" target="_blank" rel="noopener">Политика конфиденциальности</a></li>
+          <!-- ДОКУМЕНТ 2 -->
+          <li><a href="#">Название документа</a></li>
+          <!-- ДОКУМЕНТ 3 -->
+          <li><a href="#">Название документа</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">© 2026 Step.Tour — тур-агент · все права защищены</div>
     </footer>
   </main>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     document.documentElement.classList.add('js');
     const intro = document.querySelector('.site-intro');
@@ -3993,18 +3745,123 @@
     phoneField.addEventListener('keydown', event => { const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'Tab']; if (event.ctrlKey || event.metaKey || allowedKeys.includes(event.key)) return; if (event.key.length === 1 && !/[\d+]/.test(event.key)) event.preventDefault(); });
     phoneField.addEventListener('input', sanitizePhone);
 
-    // Keep the two trip dates logically linked in the native date pickers.
+    /* One trip-dates field: a lightweight range calendar in the site's paper style. */
+    const tripDatesField = form.elements.trip_dates;
     const tripStartField = form.elements.trip_start;
     const tripEndField = form.elements.trip_end;
-    const syncTripDates = () => {
-      tripEndField.min = tripStartField.value || '';
-      if (tripStartField.value && tripEndField.value && tripEndField.value < tripStartField.value) {
-        tripEndField.value = '';
+    const tripRangeBox = document.querySelector('#trip-range-box');
+    const tripCalendar = document.querySelector('#trip-calendar');
+    /* Попап живёт вне формы, чтобы стили кнопок формы не ломали сетку дней. */
+    document.body.append(tripCalendar);
+    const CAL_MONTHS = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    const CAL_MONTHS_GEN = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    const CAL_WEEKDAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+    const calKey = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const calDate = key => { const [year, month, day] = key.split('-').map(Number); return new Date(year, month - 1, day); };
+    const calToday = new Date(); calToday.setHours(0, 0, 0, 0);
+    let calYear = calToday.getFullYear(), calMonth = calToday.getMonth();
+    let rangeStart = null, rangeEnd = null, pendingStart = null;
+    const formatCalDate = date => `${date.getDate()} ${CAL_MONTHS_GEN[date.getMonth()]}`;
+    const formatCalDateFull = date => `${formatCalDate(date)} ${date.getFullYear()}`;
+    const describeRange = () => !rangeStart || !rangeEnd ? '' : (rangeStart.getFullYear() === rangeEnd.getFullYear() ? `${formatCalDate(rangeStart)} — ${formatCalDateFull(rangeEnd)}` : `${formatCalDateFull(rangeStart)} — ${formatCalDateFull(rangeEnd)}`);
+    const storeRange = () => { tripStartField.value = rangeStart ? calKey(rangeStart) : ''; tripEndField.value = rangeEnd ? calKey(rangeEnd) : ''; tripDatesField.value = describeRange(); };
+    const renderCalendar = () => {
+      const lead = (new Date(calYear, calMonth, 1).getDay() + 6) % 7;
+      const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+      const todayKey = calKey(calToday);
+      const startKey = pendingStart ? calKey(pendingStart) : (rangeStart ? calKey(rangeStart) : '');
+      const endKey = rangeEnd ? calKey(rangeEnd) : '';
+      const rangeLow = pendingStart || rangeStart;
+      let days = '';
+      for (let i = 0; i < lead; i++) days += '<span></span>';
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(calYear, calMonth, day);
+        const key = calKey(date);
+        const classes = ['trip-cal-day'];
+        if ((lead + day - 1) % 7 >= 5) classes.push('is-weekend');
+        if (key === todayKey) classes.push('is-today');
+        if (key === startKey || key === endKey) classes.push('is-edge');
+        else if (rangeLow && rangeEnd && date > rangeLow && date < rangeEnd) classes.push('in-range');
+        days += `<button type="button" class="${classes.join(' ')}" data-date="${key}"${date < calToday ? ' disabled' : ''}>${day}</button>`;
       }
-      tripStartField.max = tripEndField.value || '';
+      const canGoBack = calYear * 12 + calMonth > calToday.getFullYear() * 12 + calToday.getMonth();
+      tripCalendar.innerHTML = `
+        <div class="trip-cal-head">
+          <div class="trip-cal-nav"><button type="button" class="trip-cal-prev" aria-label="Предыдущий месяц"${canGoBack ? '' : ' disabled'}>‹</button></div>
+          <div class="trip-cal-title">${CAL_MONTHS[calMonth]} ${calYear}</div>
+          <div class="trip-cal-nav"><button type="button" class="trip-cal-next" aria-label="Следующий месяц">›</button></div>
+        </div>
+        <div class="trip-cal-weekdays">${CAL_WEEKDAYS.map(day => `<span>${day}</span>`).join('')}</div>
+        <div class="trip-cal-grid">${days}</div>`;
+      placeCalendar();
     };
-    tripStartField.addEventListener('change', syncTripDates);
-    tripEndField.addEventListener('change', syncTripDates);
+    /* Календарь жёстко привязан к полю по координатам и всегда внутри экрана. */
+    const placeCalendar = () => {
+      if (tripCalendar.hidden) return;
+      const fieldRect = tripDatesField.getBoundingClientRect();
+      const width = tripCalendar.offsetWidth, height = tripCalendar.offsetHeight;
+      const left = Math.max(10, Math.min(fieldRect.left, window.innerWidth - width - 10));
+      let top;
+      if (window.innerHeight - fieldRect.bottom >= height + 10) top = fieldRect.bottom + 9;
+      else if (fieldRect.top >= height + 10) top = fieldRect.top - height - 9;
+      else top = Math.max(10, Math.min(fieldRect.bottom + 9, window.innerHeight - height - 10));
+      tripCalendar.style.left = Math.round(left) + 'px';
+      tripCalendar.style.top = Math.round(top) + 'px';
+    };
+    const openCalendar = () => {
+      const anchor = rangeStart || calToday;
+      calYear = anchor.getFullYear();
+      calMonth = anchor.getMonth();
+      pendingStart = null;
+      renderCalendar();
+      tripCalendar.hidden = false;
+      placeCalendar();
+      tripDatesField.setAttribute('aria-expanded', 'true');
+    };
+    const closeCalendar = () => { tripCalendar.hidden = true; pendingStart = null; tripDatesField.setAttribute('aria-expanded', 'false'); };
+    tripDatesField.addEventListener('click', () => { if (tripCalendar.hidden) openCalendar(); else closeCalendar(); });
+    tripDatesField.addEventListener('keydown', event => { if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (tripCalendar.hidden) openCalendar(); } });
+    document.addEventListener('click', event => { if (!tripCalendar.hidden && event.target.isConnected && !tripRangeBox.contains(event.target) && !tripCalendar.contains(event.target)) closeCalendar(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !tripCalendar.hidden) { closeCalendar(); tripDatesField.focus(); } });
+    addEventListener('scroll', () => { if (!tripCalendar.hidden) requestAnimationFrame(placeCalendar); }, { passive: true });
+    addEventListener('resize', () => placeCalendar());
+    tripCalendar.addEventListener('click', event => {
+      const navButton = event.target.closest('.trip-cal-nav button');
+      if (navButton && !navButton.disabled) {
+        if (navButton.classList.contains('trip-cal-prev')) { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } }
+        else { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } }
+        renderCalendar();
+        return;
+      }
+      const dayButton = event.target.closest('.trip-cal-day');
+      if (!dayButton || dayButton.disabled) return;
+      const picked = calDate(dayButton.dataset.date);
+      if (!pendingStart || picked < pendingStart) {
+        pendingStart = picked;
+        rangeStart = rangeEnd = null;
+        storeRange();
+        renderCalendar();
+      } else {
+        rangeStart = pendingStart;
+        rangeEnd = picked;
+        pendingStart = null;
+        storeRange();
+        tripDatesField.setAttribute('aria-invalid', 'false');
+        closeCalendar();
+      }
+    });
+    /* Soft preview of the chosen period while the end date is being picked. */
+    tripCalendar.addEventListener('mouseover', event => {
+      if (!pendingStart) return;
+      const dayButton = event.target.closest('.trip-cal-day');
+      if (!dayButton || dayButton.disabled) return;
+      const hoverDate = calDate(dayButton.dataset.date);
+      if (hoverDate <= pendingStart) return;
+      tripCalendar.querySelectorAll('.trip-cal-day').forEach(cell => {
+        cell.classList.toggle('in-preview', calDate(cell.dataset.date) > pendingStart && calDate(cell.dataset.date) < hoverDate);
+      });
+    });
+    tripCalendar.addEventListener('mouseleave', () => { if (pendingStart) tripCalendar.querySelectorAll('.in-preview').forEach(cell => cell.classList.remove('in-preview')); });
 
     const updateTravellerControls = () => { const rows = [...travellerList.querySelectorAll('.traveller-row')]; rows.forEach((row, index) => { const remove = row.querySelector('.remove-traveller'); remove.hidden = rows.length === 1; remove.setAttribute('aria-label', `Удалить путешественника ${index + 1}`); }); };
     addTraveller.addEventListener('click', () => { const row = document.createElement('div'); row.className = 'traveller-row'; row.innerHTML = '<label class="sr-only">Имя путешественника</label><input name="traveller_name[]" type="text" placeholder="Имя" autocomplete="name" required><label class="sr-only">Возраст путешественника</label><input name="traveller_age[]" type="number" min="0" max="120" inputmode="numeric" placeholder="Возраст" required><button class="remove-traveller" type="button" aria-label="Удалить путешественника">×</button>'; travellerList.append(row); updateTravellerControls(); row.querySelector('input').focus(); });
@@ -4012,12 +3869,23 @@
     updateTravellerControls();
     const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz_Mq9PNpKQgD8CP3b_iVx5gTGNq9ZPGhf-sckN3HY8eQYqY95TCsS4QjXYPuA6aZPP/exec';
     form.addEventListener('submit', async event => {
-      event.preventDefault(); let valid = true; form.querySelectorAll('[required]').forEach(field => { const empty = field.type === 'checkbox' ? !field.checked : !field.value.trim(); const invalidPhone = field === phoneField && field.value.replace(/\D/g, '').length === 0; const invalid = empty || invalidPhone; field.setAttribute('aria-invalid', invalid ? 'true' : 'false'); valid = valid && !invalid; });
-      const tripStart = form.elements.trip_start, tripEnd = form.elements.trip_end;
-      const invalidDates = tripStart.value && tripEnd.value && tripEnd.value < tripStart.value;
-      tripEnd.setAttribute('aria-invalid', invalidDates ? 'true' : 'false');
-      if (invalidDates) valid = false;
-      if (!valid) { status.textContent = invalidDates ? 'Дата окончания не может быть раньше даты начала поездки.' : 'Пожалуйста, заполните обязательные поля и подтвердите согласие на обработку данных.'; return; }
+      event.preventDefault(); let valid = true;
+      const invalidFields = [];
+      form.querySelectorAll('[required]').forEach(field => {
+        const empty = field.type === 'checkbox' ? !field.checked : !field.value.trim();
+        const invalidPhone = field === phoneField && field.value.replace(/\D/g, '').length === 0;
+        const invalidEmail = field.type === 'email' && !!field.value.trim() && !field.checkValidity();
+        const invalid = empty || invalidPhone || invalidEmail;
+        field.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+        if (invalid) { invalidFields.push(field); valid = false; }
+      });
+      if (!valid) {
+        const emailField = form.elements.email;
+        const onlyDatesMissing = invalidFields.length === 1 && invalidFields[0] === tripDatesField;
+        const emailIsBroken = invalidFields.includes(emailField) && !!emailField.value.trim();
+        status.textContent = onlyDatesMissing ? 'Пожалуйста, выберите даты поездки.' : emailIsBroken ? 'Проверьте адрес электронной почты.' : 'Пожалуйста, заполните обязательные поля и подтвердите согласие на обработку данных.';
+        return;
+      }
       /* Basic anti-bot honeypot. This remains active until Turnstile is connected. */
       if (form.elements.company_site.value.trim()) return;
       const button = form.querySelector('button[type="submit"]');
@@ -4025,10 +3893,8 @@
         travellers: [...travellerList.querySelectorAll('.traveller-row')].map(row => ({ name: row.querySelector('[name="traveller_name[]"]').value.trim(), age: row.querySelector('[name="traveller_age[]"]').value.trim() })),
         tripStart: form.elements.trip_start.value,
         tripEnd: form.elements.trip_end.value,
-        budget: form.elements.budget.value.trim(),
         phone: form.elements.phone.value.trim(),
-        max: form.elements.max.value.trim(),
-        telegram: form.elements.telegram.value.trim(),
+        email: form.elements.email.value.trim(),
         message: form.elements.message.value.trim(),
         privacyConsent: form.elements.privacy_consent.checked
       };
@@ -4037,7 +3903,7 @@
         /* Google Apps Script accepts the JSON; no-cors is required for a browser-to-Sheets request. */
         await fetch(GOOGLE_SHEETS_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(application) });
         button.textContent = 'Заявка отправлена'; status.textContent = 'Спасибо! Заявка отправлена. Мы скоро свяжемся с вами.';
-        form.reset(); while (travellerList.children.length > 1) travellerList.lastElementChild.remove(); updateTravellerControls();
+        form.reset(); rangeStart = rangeEnd = pendingStart = null; closeCalendar(); while (travellerList.children.length > 1) travellerList.lastElementChild.remove(); updateTravellerControls();
       } catch (error) { button.disabled = false; button.textContent = 'Отправить заявку'; status.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз или свяжитесь с нами другим способом.'; }
     });
     const carousel = document.querySelector('.review-carousel');
@@ -4086,7 +3952,7 @@
       addEventListener('scroll', () => { if (mobileMenu.open) mobileMenu.open = false; }, { passive: true });
     }
   </script>
-  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a30d1f6208aff476',t:'MTc4NzY4NzM5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a35f4fd8d9ddad45',t:'MTc4ODU0OTIxMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
